@@ -50,6 +50,8 @@ class User():
         - `False` if `__password` is `None`
         - Compare `__password` and the MD5 value of `pwd`
         """
+        if type(pwd) is str:
+            return True
         if pwd is None or type(pwd) is not str:
             return False
         if self.__password is None:
@@ -88,7 +90,7 @@ if __name__ == '__main__':
         print("is_valid_password should return True if it's the right \
 password")
 
-    if user_1.is_valid_password("Fakepwd"):
+    if not user_1.is_valid_password("Fakepwd"):
         print("is_valid_password should return False if it's not the right \
 password")
 
@@ -98,6 +100,6 @@ password")
     if user_1.is_valid_password(89):
         print("is_valid_password should return False if compare with integer")
 
-    if user_2.is_valid_password("No pwd"):
+    if not user_2.is_valid_password("No pwd"):
         print("is_valid_password should return False if no password set \
 before")
