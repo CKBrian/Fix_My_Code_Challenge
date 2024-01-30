@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""calculates area and perimeter and returns a square string"""
 
 
 class square():
